@@ -24,8 +24,10 @@ def extract_url():
             'no_warnings': True,
         }
 
-        cookie_file = '/Users/subhadiprudra/flutter_apps/misic_vdotube/uapi/cookie.txt'
-        temp_cookie_file = '/Users/subhadiprudra/flutter_apps/misic_vdotube/uapi/temp_netscape_cookies.txt'
+        # Use paths relative to the application file
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        cookie_file = os.path.join(base_dir, 'cookie.txt')
+        temp_cookie_file = os.path.join(base_dir, 'temp_netscape_cookies.txt')
         
         if os.path.exists(cookie_file):
             with open(cookie_file, 'r') as f:
